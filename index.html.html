@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Master Visa - Check</title>
+  <link rel="stylesheet" href="lo.css">
+</head>
+<body>
+  <!-- Welcome -->
+  <div class="welcome-bar">
+    <marquee>🌍 Welcome to Master Visa Website | مرحبا بكم في موقع ماستر فيزا 🌍</marquee>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <h1>Master Visa</h1>
+    <p class="tagline">Check your estimated acceptance rate for a Schengen Visa.</p>
+    <p>تحقق من معدل القبول المتوقع للحصول على تأشيرة شنغن.</p>
+  </header>
+
+  <main>
+    <!-- User info form -->
+    <section class="card">
+      <h2>Enter your details</h2>
+      <h2>أدخل تفاصيلك</h2>
+      <form id="userForm">
+        <div class="grid">
+          <label>Name <input type="text" id="name" required></label>
+          <label>Phone <input type="tel" id="phone" required></label>
+          <label class="full">Email <input type="email" id="email" required></label>
+        </div>
+      </form>
+    </section>
+
+    <!-- Questionnaire -->
+    <section class="card">
+      <h2>Visa Questionnaire</h2>
+      <h2>الإجابة على استبيان التأشيرة</h2>
+      <form id="quizForm">
+        <fieldset>
+          <legend>Social status</legend>
+          <legend>الحالة الاجتماعية</legend>  
+          <label><input type="radio" name="marital" value="single"> Single</label>
+          <label><input type="radio" name="marital" value="married"> Married</label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Children</legend>
+          <label><input type="radio" name="children" value="yes"> Yes</label>
+          <label><input type="radio" name="children" value="no"> No</label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Age above 50</legend>
+          <legend>العمر فوق 50</legend>
+          <label><input type="radio" name="age50" value="yes"> Yes</label>
+          <label><input type="radio" name="age50" value="no"> No</label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Bank  satatemen</legend>
+          <legend>الحساب المصرفي</legend>
+          <label><input type="radio" name="bank" value="yes"> Yes</label>
+          <label><input type="radio" name="bank" value="no"> No</label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Own a registered company</legend>
+          <legend> شركة مسجلة</legend>
+          <label><input type="radio" name="company" value="yes"> Yes</label>
+          <label><input type="radio" name="company" value="no"> No</label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Confirmed flight & hotel booking</legend>
+          <legend> الرحلة والفنادق مؤكدة</legend>
+          <label><input type="radio" name="booking" value="yes"> Yes</label>
+          <label><input type="radio" name="booking" value="no"> No</label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Travel insurance</legend>
+          <legend> التأمين على السفر</legend>
+          <label><input type="radio" name="insurance" value="yes"> Yes</label>
+          <label><input type="radio" name="insurance" value="no"> No</label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Previous Schengen visa</legend>
+          <legend>تأشيرات شنغن سابقة</legend>
+          <label><input type="radio" name="prev" value="yes"> Yes</label>
+          <label><input type="radio" name="prev" value="no"> No</label>
+        </fieldset>
+      </form>
+    </section>
+
+    <!-- Score + Button -->
+    <section class="card score">
+      <div id="scoreValue" class="score-value">10%</div>
+      <p class="score-help">Estimated chance (not a guarantee).</p>
+      <p>الاحتمال المتوقع (ليس تأكيد).</p>
+      <button id="submitBtn" class="btn primary">Submit</button>
+      <button id="submitBtn" class="btn primary">ارسال</button>
+      <p id="errorMsg" class="lead-msg"></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <small>© <span id="year"></span> Master Visa</small>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
