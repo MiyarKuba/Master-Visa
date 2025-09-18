@@ -4,35 +4,105 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Master Visa - Contact</title>
-  <link rel="stylesheet" href="lo.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- Welcome -->
   <div class="welcome-bar">
-    <marquee>🌍 Contact Master Visa Today 🌍</marquee>
-    <marquee>اتصل بماستر فيزا اليوم 🌍</marquee>
+    <marquee>🌍 Contact Master Visa Today | احجز موعدك الآن 🌍</marquee>
   </div>
 
+  <!-- Header -->
   <header class="site-header">
     <h1>Master Visa Contact</h1>
-    <h1>اتصل بماستر فيزا</h1>
+    <p class="tagline">Your trusted partner for Schengen visas</p>
   </header>
 
   <main>
+    <!-- Contact Information -->
     <section class="card">
       <h2>Contact Information</h2>
-      <p>Contact Master Visa to get your guaranteed Schengen visa.</p>
-      <P>اتصل بماستر فيزا للحصول على تأشيرة شنغن مضمونة.    </P>
-      <p><strong>Phone:</strong> +218 91 123 4567</p>
-      <p><strong>Email:</strong> info@mastervisa.ly</p>
-      <a class="btn primary" href="https://wa.me/218911234567" target="_blank">Chat on WhatsApp</a>
+      <p class="tagline">Contact Master Visa to get your guaranteed Schengen visa.</p>
+
+      <div class="contact-box">
+        <p><strong>Phone:</strong> +218 91 123 4567</p>
+        <p><strong>Email:</strong> info@mastervisa.ly</p>
+        <a class="btn primary" href="https://wa.me/218911234567" target="_blank">💬 Chat on WhatsApp</a>
+      </div>
+    </section>
+
+    <!-- Appointment Booking -->
+    <section class="card">
+      <h2>Book an Appointment</h2>
+      <p>Choose a time slot and confirm your appointment with Master Visa.</p>
+      <button id="openBooking" class="btn outline">📅 Book Appointment</button>
     </section>
   </main>
 
+  <!-- Modal for Booking -->
+  <div id="modal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="modal-title">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="modal-title">Select Appointment Slot</h3>
+        <button id="closeModal" class="icon-btn" aria-label="Close">✕</button>
+      </div>
+      <div id="slotContainer" class="slots">
+        <div class="slot">Monday 10:00 AM</div>
+        <div class="slot">Monday 2:00 PM</div>
+        <div class="slot">Tuesday 11:00 AM</div>
+        <div class="slot">Wednesday 3:00 PM</div>
+      </div>
+      <div class="modal-footer">
+        <button id="confirmBooking" class="btn primary" disabled>Confirm</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
   <footer class="site-footer">
     <small>© <span id="year"></span> Master Visa</small>
   </footer>
+
   <script>
+    // Show current year
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Modal controls
+    const modal = document.getElementById("modal");
+    const openBooking = document.getElementById("openBooking");
+    const closeModal = document.getElementById("closeModal");
+    const slots = document.querySelectorAll(".slot");
+    const confirmBtn = document.getElementById("confirmBooking");
+
+    let selectedSlot = null;
+
+    openBooking.addEventListener("click", () => {
+      modal.setAttribute("aria-hidden", "false");
+    });
+
+    closeModal.addEventListener("click", () => {
+      modal.setAttribute("aria-hidden", "true");
+      confirmBtn.disabled = true;
+      if (selectedSlot) selectedSlot.classList.remove("selected");
+      selectedSlot = null;
+    });
+
+    slots.forEach(slot => {
+      slot.addEventListener("click", () => {
+        if (selectedSlot) selectedSlot.classList.remove("selected");
+        slot.classList.add("selected");
+        selectedSlot = slot;
+        confirmBtn.disabled = false;
+      });
+    });
+
+    confirmBtn.addEventListener("click", () => {
+      if (selectedSlot) {
+        alert("Appointment booked: " + selectedSlot.textContent);
+        modal.setAttribute("aria-hidden", "true");
+      }
+    });
   </script>
 </body>
 </html>
+
