@@ -1,0 +1,305 @@
+/* Master Visa Website - Modern Colorful Style */
+:root {
+  --bg: #f3f6fc;
+  --card: #ffffff;
+  --text: #0f1a2b;
+  --muted: #5c6b84;
+  --primary: #276ef1;
+  --primary-dark: #1849a8;
+  --accent: #ff6b6b;
+  --success: #2ecc71;
+  --radius: 16px;
+  --transition: 0.3s ease;
+  --shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', system-ui, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* ===== Welcome Bar ===== */
+.welcome-bar {
+  background: linear-gradient(90deg, #276ef1, #1f5dd1, #1849a8);
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 10px 0;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  box-shadow: var(--shadow);
+}
+
+/* ===== Navigation ===== */
+.nav-bar {
+  background: #fff;
+  border-radius: 30px;
+  margin: 15px auto;
+  padding: 12px 25px;
+  max-width: 900px;
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-bar ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+
+.nav-bar a {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 600;
+  font-size: 17px;
+  padding: 8px 15px;
+  border-radius: 20px;
+  transition: var(--transition);
+}
+
+.nav-bar a:hover {
+  background: var(--primary);
+  color: #fff;
+  box-shadow: 0 3px 8px rgba(39,110,241,0.3);
+  transform: translateY(-2px);
+}
+
+/* ===== Header ===== */
+.site-header {
+  text-align: center;
+  padding: 40px 20px 20px;
+}
+
+.site-header h1 {
+  font-size: 42px;
+  font-weight: 800;
+  margin-bottom: 8px;
+  color: var(--primary-dark);
+}
+
+.tagline {
+  font-size: 18px;
+  color: var(--muted);
+}
+
+/* ===== Main Content ===== */
+main {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 0 16px;
+  display: grid;
+  gap: 20px;
+}
+
+/* ===== Cards ===== */
+.card {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: var(--shadow);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+
+.card h2 {
+  font-size: 22px;
+  margin-bottom: 12px;
+  color: var(--primary-dark);
+}
+
+/* ===== Score Section ===== */
+.score {
+  text-align: center;
+}
+
+.score-value {
+  font-size: 54px;
+  font-weight: 700;
+  margin: 10px 0;
+  color: var(--primary);
+  transition: color var(--transition), transform var(--transition);
+}
+
+.score-value:hover {
+  color: var(--accent);
+  transform: scale(1.05);
+}
+
+.score-help {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+/* ===== Forms ===== */
+form fieldset {
+  border: 2px solid #e3e8f0;
+  border-radius: var(--radius);
+  padding: 16px;
+  margin-bottom: 16px;
+  transition: border-color var(--transition);
+}
+
+form fieldset:hover {
+  border-color: var(--primary);
+}
+
+legend {
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--primary-dark);
+}
+
+label {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 16px;
+  gap: 6px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+input[type="radio"] {
+  transform: scale(1.3);
+}
+
+/* ===== Buttons ===== */
+.btn {
+  display: inline-block;
+  padding: 12px 20px;
+  border-radius: 25px;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  text-align: center;
+}
+
+.btn.primary {
+  background: var(--primary);
+  color: #fff;
+}
+
+.btn.primary:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+.btn.outline {
+  background: transparent;
+  border: 2px solid var(--primary);
+  color: var(--primary);
+}
+
+.btn.outline:hover {
+  background: var(--primary);
+  color: #fff;
+}
+
+/* ===== Lead Form ===== */
+.grid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"] {
+  padding: 12px;
+  border: 2px solid #e3e8f0;
+  border-radius: var(--radius);
+  font-size: 16px;
+  transition: var(--transition);
+}
+
+input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(39,110,241,0.15);
+  outline: none;
+}
+
+/* ===== Modal ===== */
+.modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.45);
+}
+
+.modal[aria-hidden="false"] {
+  display: flex;
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  max-width: 500px;
+  width: 90%;
+  animation: slideUp 0.3s ease;
+}
+
+.slots {
+  display: grid;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.slot {
+  padding: 12px;
+  border-radius: var(--radius);
+  border: 2px solid #e3e8f0;
+  text-align: center;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.slot:hover {
+  background: var(--primary);
+  color: #fff;
+  border-color: var(--primary);
+}
+
+.slot.selected {
+  background: var(--success);
+  color: #fff;
+  border-color: var(--success);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0 }
+  to { opacity: 1 }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(40px); opacity: 0 }
+  to { transform: translateY(0); opacity: 1 }
+}
+
+/* ===== Footer ===== */
+.site-footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  color: var(--muted);
+}
